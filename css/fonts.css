@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'MMC-OFFICE';
+  src: url('../fonts/MMC-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/MMC-Regular.otf')  format('opentype'),
+	     url('../fonts/MMC-Regular.woff') format('woff'), url('../fonts/MMCOFFICE-Regular.ttf')  format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MMC-OFFICE';
+  src: url('../fonts/MMC-Medium.eot?#iefix') format('embedded-opentype'),  url('../fonts/MMC-Medium.otf')  format('opentype'),
+	     url('../fonts/MMC-Medium.woff') format('woff'), url('../fonts/MMCOFFICE-Medium.ttf')  format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MMC-OFFICE';
+  src: url('../fonts/MMC-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/MMC-Bold.otf')  format('opentype'),
+	     url('../fonts/MMC-Bold.woff') format('woff'), url('../fonts/MMCOFFICE-Bold.ttf')  format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

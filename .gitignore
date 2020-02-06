@@ -1,0 +1,6 @@
+/.idea/
+/node_modules/
+/cache/
+/bundle/
+/firefox_root/
+/webpack/devServer.js
