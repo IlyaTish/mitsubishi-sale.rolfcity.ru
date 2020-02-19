@@ -1,3 +1,4 @@
+import './styles/main.sass';
 import Vue from 'vue'
 import App from './App.vue'
 import Constants from './common/constants';

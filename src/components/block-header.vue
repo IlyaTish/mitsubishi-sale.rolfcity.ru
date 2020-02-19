@@ -11,7 +11,7 @@
     .block-header__row-2
       .container
         .block-header__menu
-          a(href='#present' class='submenu') МОДЕЛЬНЫЙ РЯД
+          a(href='#present') МОДЕЛЬНЫЙ РЯД
           a(href='#filter_table' class='anchor') выбрать комплектацию
           a(href='#kred' class='anchor') кредитные предложения
           a(href='#preim' class='anchor') преимущества
@@ -20,9 +20,7 @@
 
 <script>
   export default {
-    name: 'block-header',
-    data() {
-    },
+    name: 'block-header'
   }
 </script>
 
@@ -40,7 +38,7 @@
       color: #EB0000
       font-size: 18px
       font-family: 'MMCOFFICE-Bold'
-      background: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAWBAMAAAAP/cBTAAAABGdBTUE…wq4VDg7hRZpJY14ZE0v8b+h4ORyb1Ujp4FCxqrsjTrffQBD18qU2tioIMAAAAASUVORK5CYII=) left center no-repeat
+      background: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAWBAMAAAAP/cBTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX////bDibbDibbDibbDibbDibbDibbDibbDibbDibbDibbDibbDibbDibbDib///8mPtiEAAAADnRSTlMAVZkRRHciu+7dzDOqiErnqhgAAAABYktHRACIBR1IAAAAB3RJTUUH4wcQFjIpCVRb3AAAAFVJREFUCNdVjbsJgEAAQ6MixxWKuIJ7OIsTOJa1K/lBROTN4OU6m9ckeZF6BlWwqYBTNVwq4VDg7hRZpJY14ZE0v8b+h4ORyb1Ujp4FCxqrsjTrffQBD18qU2tioIMAAAAASUVORK5CYII=) left center no-repeat
       padding-left: 17px
       &:before, &:after
         content: ''

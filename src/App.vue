@@ -1,22 +1,52 @@
-<template>
-    <div id='app'>
-      <block-header id='header' v-on='block_handlers'></block-header>
-    </div>
+<template lang='pug'>
+    #app
+      block-header#header
+      block-main
+      block-cars
 </template>
 
 <script>
-import './styles/main.sass';
 import BlockHeader from './components/block-header';
+import BlockMain from './components/block-main';
+import BlockCars from './components/block-cars';
 
 export default {
   name: 'App',
-  components: {
-    BlockHeader
+  data: function () {
+    return {
+      show: {
+        agreement: false,
+        load: false,
+        get: false,
+        thanks: false
+      },
+      cur_office: 1,
+      data: {},
+    };
   },
+  components: {
+    BlockHeader,
+    BlockMain,
+    BlockCars
+  },
+  computed: {
+    block_handles() {
+      return {
+        'callBack': this.callThere,
+        'getCall': this.handleGetCall
+      }
+    }
+  },
+  methods: {
+    handleGetCall(data) {
+      this.show.get = true;
+      this.data = data;
+    }
+  }
 }
 </script>
 
-<style lang='sass' scoped>
+<style lang='sass'>
   #app
     display: flex
     flex-direction: column
