@@ -6,15 +6,15 @@
       .cars-list
         .car(v-for='car in cars')
           .car__col.car__col--col-1
-            a.popup(href='#')
+            a(@click='getCall({ type: "sale", form: "car", text: `Оставьте заявку на MITSUBISHI ` + car.name + ` и мы Вам перезвоним` })')
               h3.car__name Mitsubishi <b>{{ car.name }}</b>
-            a(href='#')
+            a(@click='getCall({ type: "sale", form: "car", text: `Оставьте заявку на MITSUBISHI ` + car.name + ` и мы Вам перезвоним` })')
               .car__img-cont
                 img(:src='car.imgUrl')
 
           .car__col.car__col--col-2
-            a.popup(href='#' @click='getCall({ type: "sale", form: "car" })')
-              span.car__price от <span class='large'>{{ car.price }}</span><span class='rub'></span>
+            a(@click='getCall({ type: "sale", form: "car", text: `MITSUBISHI ` + car.name + ` от ` + $options.filters.delimiter(car.price, car.price.delimiter) + `\u00A0руб.` })')
+              span.car__price от <span class='large'>{{ car.price | delimiter }}</span><span class='rub'></span>
             ul.car__dop-items
               li.car__dop-item(v-for='info_item in car.dopInfo') {{ info_item }}
 
@@ -22,25 +22,49 @@
             span.car__in-stock Осталось {{ car.stok }} авто по акции
             .car__advantage
               span.car__advantage-text Выгода до
-              span.car__advantage-price {{ car.advantage }}
+              span.car__advantage-price {{ car.advantage | delimiter }}
               p.car__rub-sym <span class='rub'></span> <sup>*</sup>
-              a.car__btn.popup.btn(href='# ') узнайте свою цену
+              a.car__btn.btn(@click='getCall({ type: "sale", form: "car", text: `УЗНАЙТЕ СВОЮ ЦЕНУ! MITSUBISHI ` + car.name + `` })') узнайте свою цену
               p.car__p <b>Пользуется спросом!</b> За последние 2&nbsp;часа заказали звонок {{ car.amount }} раз
 </template>
 
 <script>
+  import Mixin from '../common/mixin';
   import CarsInfo from '../common/cars-info';
-  import CallbackInput from "./callback-form/callback-input";
+  import finance from '../common/finance';
+  import CallbackInput from './callback-form/callback-input';
 
   export default {
     name: 'block-cars',
-    components: {CallbackInput},
+    mixins: [Mixin, finance],
+    components: { CallbackInput },
     data() {
       return {
-        cars: CarsInfo.CARS,
+        cars: CarsInfo.CARS
+      };
+    },
+    methods: {
+      scrollTo(where) {
+        let newhash = '#' + where;
+        history.replaceState(null, null, newhash);
+        this.$emit('scrollTo', where);
+      },
+      getAgreement() {
+        this.$emit('getAgreement');
+      },
+    },
+    filters: {
+      delimiter: (value) => {
+        return value
+                .toString()
+                .split('')
+                .reverse()
+                .map((char, i) => char + (i % 3 ? '' : '\u00A0'))
+                .reverse()
+                .join('');
       }
     }
-  }
+  };
 </script>
 
 <style lang='sass'>
@@ -58,7 +82,7 @@
     align-items: center
     justify-content: space-between
     position: relative
-    background: url(../assets/images/car.ramka.png) 206px center no-repeat
+    background: url(../images/car.ramka.png) 206px center no-repeat
     &__col
       &--col-1
         width: 38%
@@ -134,6 +158,7 @@
         color: #EB0000
         font-size: 65px
         font-family: 'MMCOFFICE-Bold'
+        white-space: nowrap
 
     &__rub-sym
       display: inline

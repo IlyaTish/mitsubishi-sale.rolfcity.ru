@@ -1,27 +1,48 @@
-<template lang='pug'>
+<template lang="pug">
   .block-header
     .block-header__row-1
       .container
-        a.logo-1.popup(href='#form_popup' _title='Заказать звонок' title='Mitsubishi' alt='Mitsubishi')
-          img(src='@/assets/images/logo1.png')
-        a.logo-2.popup(href='#form_popup' _title='Заказать звонок')
-          img(src='@/assets/images/dealer-logo.svg')
-        a.phone(href='tel:+74957851994') {{ CONSTANTS.phone }}
-        a.block-header__btn.btn.popup(href='#form_popup' _comment='' _name='vizov' _title='Заказать звонок') Заказать звонок
+        a.logo-1(@click='getCall({ type: "sale", form: "header" })')
+          img(src='@/images/logo1.png')
+        a.logo-2(@click='getCall({ type: "sale", form: "header" })')
+          img(src='@/images/dealer-logo.svg')
+        a.phone(v-for='office in offices' :href='"tel:" + office.phone_raw') {{ office.phone }}
+        a.block-header__btn.btn(@click='getCall({ type: "sale", form: "header" })') Заказать звонок
     .block-header__row-2
       .container
         .block-header__menu
-          a(href='#present') МОДЕЛЬНЫЙ РЯД
-          a(href='#filter_table' class='anchor') выбрать комплектацию
-          a(href='#kred' class='anchor') кредитные предложения
-          a(href='#preim' class='anchor') преимущества
-          a(href='#contacts' class='anchor') контакты
+          a(@click='scrollTo("cars")') МОДЕЛЬНЫЙ РЯД
+          a() выбрать комплектацию
+          a(@click='scrollTo("offer")') кредитные предложения
+          a(@click='scrollTo("advantages")') преимущества
+          a() контакты
 </template>
 
 <script>
+  import Mixin from "../common/mixin";
+
   export default {
-    name: 'block-header'
-  }
+    name: "block-header",
+    components: {},
+    directives: {},
+    mixins: [Mixin],
+    data() {
+      let offices = this.CONSTANTS.offices;
+      return {
+        offices: offices
+      };
+    },
+    methods: {
+      scrollTo(where) {
+        let newhash = "#" + where;
+        history.replaceState(null, null, newhash);
+        this.$emit("scrollTo", where);
+      },
+      getCall(data) {
+        this.$emit("getCall", data);
+      }
+    }
+  };
 </script>
 
 <style lang='sass'>

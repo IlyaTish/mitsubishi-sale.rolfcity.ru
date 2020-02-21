@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px 10px 5px 10px;
+            text-align: left;
+        }
+
+        th {
+            width: 120px;
+        }
+
+        .dynamic-field > div {
+            width: 920px;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th colspan="2">{{ error }}</a></th>
+    </tr>
+    {% for key in context|keys %}
+        <tr>
+            <th>{{ key }}:</th>
+            <td class="dynamic-field">
+                <div>
+                {% if context[key] is iterable %}
+                    {% for key,value in context[key] %}
+
+                        <b>{{ key }}</b> :
+                        {% if value is iterable %}
+                            {{ value|json_encode(constant('JSON_UNESCAPED_UNICODE')) }}
+                        {% else %}
+                            {{ value }}
+                        {% endif %}
+
+                        <br>
+                    {% endfor %}
+                {% else %}
+                   {{ context[key] }}
+                {% endif %}
+                </div >
+            </td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+
+$dotenv = Dotenv\Dotenv::create(__DIR__ );
+$dotenv->load();
+
+$settings = require __DIR__ . '/config/settings.php';
+$slim = new \Slim\App($settings);
+
+$dependencies = require __DIR__ . '/config/dependencies.php';
+$dependencies($slim);
+
+$commands = require __DIR__ . '/config/console.php';
+$commands($application, $slim->getContainer());
+
+$application->run();

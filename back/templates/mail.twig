@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Call</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px 10px 5px 10px;
+            text-align: left;
+        }
+
+        th {
+            width: 120px;
+        }
+
+        .dynamic-field > div {
+            width: 920px;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+
+<table style="width:100%">
+    <tr>
+        <th colspan="2">Запрос обратного звонка <a href="{{ url }}">{{ host }}</a></th>
+    </tr>
+    <tr>
+        <th>Тип:</th>
+        <td>{{ form_type }}</td>
+    </tr>
+    <tr>
+        <th>Телефон:</th>
+        <td>{{ phone }}</td>
+    </tr>
+    <tr>
+        <th>Расположение:</th>
+        <td>{{ path }}</td>
+    </tr>
+    {% if utm_source is not empty %}
+        <tr>
+            <th>Utm_source:</th>
+            <td>{{ utm_source }}</td>
+        </tr>
+    {% endif %}
+    {% if utm_medium is not empty %}
+        <tr>
+            <th>Utm_medium:</th>
+            <td>{{ utm_medium }}</td>
+        </tr>
+    {% endif %}
+    {% if utm_campaign is not empty %}
+        <tr>
+            <th>Utm_campaign:</th>
+            <td>{{ utm_campaign }}</td>
+        </tr>
+    {% endif %}
+    {% if utm_content is not empty %}
+        <tr>
+            <th>Utm_content:</th>
+            <td>{{ utm_content }}</td>
+        </tr>
+    {% endif %}
+    {% if utm_term is not empty %}
+        <tr>
+            <th>Utm_term:</th>
+            <td>{{ utm_term }}</td>
+        </tr>
+    {% endif %}
+    <tr>
+        <th>Ip:</th>
+        <td>{{ ip }}</td>
+    </tr>
+    <tr>
+        <th>User Agent:</th>
+        <td>{{ user_agent }}</td>
+    </tr>
+</table>
+
+{% if back_ck is not empty %}
+    <br>
+    <table style="width:100%">
+        <tr>
+            <th colspan="2">Callkeeper API</th>
+        </tr>
+        {% if back_ck['call_id'] is not empty %}
+            <tr>
+                <th>Id звонка:</th>
+                <td>{{ back_ck['call_id'] }}</td>
+            </tr>
+        {% endif %}
+
+        {% if back_ck['client_phone'] is not empty %}
+            <tr>
+                <th>Номер клиента:</th>
+                <td>{{ back_ck['client_phone'] }}</td>
+            </tr>
+        {% endif %}
+
+        {% if back_ck['manager_phone'] is not empty %}
+            <tr>
+                <th>Номер менеджера:</th>
+                <td>{{ back_ck['manager_phone'] }}</td>
+            </tr>
+        {% endif %}
+
+        <tr>
+            <th>Referrer:</th>
+            <td>{{ back_ck['referrer'] }}</td>
+        </tr>
+        <tr>
+            <th>GA Id:</th>
+            <td>{{ back_ck['ga_id'] }}</td>
+        </tr>
+
+    </table>
+{% endif %}
+
+
+{% if front_ck['status'] is not empty %}
+    <br>
+    <table style="width:100%">
+        <tr>
+            <th colspan="2">Callkeeper Actioncall</th>
+        </tr>
+        <tr>
+            <th>Статус:</th>
+            <td>{{ front_ck['status'] }}</td>
+        </tr>
+
+        <tr>
+            <th>Лог:</th>
+            <td class="dynamic-field">
+                <div>
+                    {{ front_ck['message'] }}
+                </div >
+            </td>
+        </tr>
+
+    </table>
+{% endif %}
+
+</body>
+</html>

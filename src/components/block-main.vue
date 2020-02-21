@@ -19,6 +19,45 @@
               a.submenu__link.btn.gray-bg.td Записаться на тест-драйв
 </template>
 
+<script>
+  import Mixin from '../common/mixin';
+  import finance from '../common/finance';
+  import CallbackInput from './callback-form/callback-input';
+  import Swiper from 'swiper';
+  import $ from 'jquery';
+  import Inputmask from 'inputmask';
+
+  export default {
+    name: 'block-main',
+    components: { CallbackInput },
+    mixins: [Mixin, finance],
+    mounted() {
+      window.addEventListener('click', event => {
+        if (!event.target || !event.target.id) {
+          return;
+        }
+        if (event.target.id === 'btn-common-1') {
+          this.getCall({ type: 'sale', form: 'main' });
+        }
+      });
+    },
+    watch: {
+      device_platform() {
+        if (this.swiper) {
+          this.swiper.destroy();
+          this.swiper = null;
+          this.$nextTick(this.initSwiper);
+        }
+      }
+    },
+    methods: {
+      getAgreement() {
+        this.$emit('getAgreement');
+      }
+    }
+  };
+</script>
+
 <style lang='sass'>
   .main
     &__cont

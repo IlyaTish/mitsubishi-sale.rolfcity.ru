@@ -1,0 +1,13 @@
+$default-orange: #f47920;
+$dark-gray: #4c4c4c;
+$headers: #555555;
+$light-gray: #f0f0f0;
+
+@function calcFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+}

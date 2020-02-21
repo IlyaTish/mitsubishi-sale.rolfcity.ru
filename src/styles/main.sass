@@ -1,7 +1,10 @@
-@import 'fonts'
+@import 'dom.sass'
+@import 'fonts.sass'
+@import 'transitions'
+@import 'constants.scss'
 
 .container
-  margin: 0px auto
+  margin: 0 auto
   max-width: 1140px
   position: relative
   padding: 0px 15px
@@ -9,7 +12,6 @@
     width: 1140px
     max-width: 100%
     padding: 0
-    margin-top: 0
 
 .logo-2
   img
@@ -44,11 +46,22 @@
 
 .gray-bg
   color: #FFFFFF
-  background: #979797 !important
+  background: #979797
   cursor: pointer
   transition: .2s
   &:hover, &:focus, &:active
-    background: #5F5E5E !important
+    background: #5F5E5E
+
+.scroll-blocked
+  height: 100%
+  overflow: hidden
+
+.no-select
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-drag: none
+  -webkit-user-drag: none
 
 .title
   margin: 10px 0 0
@@ -94,29 +107,9 @@
     display: block
     margin-right: 10px
 
-*
-  box-sizing: border-box
-
-body
-  margin: 0
-  background: white url(../assets/images/bg1.jpg) center 130px no-repeat
-
-div, section
-  width: 100%
-
-a
-  color: #000000
-  text-decoration: none
-
-img
-  border-style: none
-  vertical-align: middle
-  max-width: 100%
-  align-self: center
-
-b
-  font-family: 'MMCOFFICE-Bold'
-
 .rub
   &:before
     content: '\20BD'
+
+.upper
+  text-transform: uppercase

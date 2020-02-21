@@ -1,0 +1,70 @@
+<template lang='pug'>
+  .offer
+    .container
+      h2.offer__title Кредит
+      p.offer__p Выгодные кредитные условия банков- <br>партнёров с максимальным комфортом <br>помогут вам стать владельуем Mitsubishi
+      .offer__info
+        span.offer__info-sup 5,9% <sup>*****</sup>
+        span.offer__info-text процентная <br>ставка
+      .offer__btn.btn(@click='getCall({ type: "credit", form: "offer", text: "РАССЧИТАТЬ КРЕДИТ" })') Рассчитать кредит
+</template>
+
+<script>
+  import Mixin from '../common/mixin';
+  import filters from '../common/finance';
+  import CallbackInput from './callback-form/callback-input';
+
+  export default {
+    name: 'block-offer',
+    components: { CallbackInput },
+    mixins: [Mixin, filters],
+    methods: {
+      getAgreement() {
+        this.$emit('getAgreement');
+      }
+    }
+  };
+</script>
+
+<style scoped lang='sass'>
+  .offer
+    min-height: 450px
+    margin: 0 0 50px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background: url(../images/block-offer-bg.jpg) center center no-repeat
+
+    &__title
+      color: #FFFFFF
+      font-size: 24px
+      font-family: 'MMCOFFICE-Bold'
+      text-transform: upppercase
+
+    &__p
+      margin: 0 0 10px
+      padding: 16px 20px
+      color: #FFFFFF
+
+    &__info
+      color: #E29B98
+      font-size: 10px
+      font-family: 'MMCOFFICE-Bold'
+      text-transform: uppercase
+
+    &__info-sup
+      margin: 0 0 5px
+      display: block
+      color: #FFFFFF
+      font-size: 36px
+
+    &__btn
+      margin: 34px 0 0 94px
+      max-width: 290px
+      color: #EB0000
+      background: #FFFFFF
+      &:hover
+        color: #FFFFFF
+        background: transparent
+        border: 3px solid #FFFFFF
+</style>

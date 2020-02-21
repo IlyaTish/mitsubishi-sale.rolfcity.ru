@@ -77,43 +77,43 @@ export default {
   CARS: [
     {
       id:        'outlander',
-      name:      'Outlander',
+      name:      'OUTLANDER',
       price:     PRICES.outlander,
       advantage: ADVANTAGES.outlander,
       dopInfo:   DOPINFO.outlander,
       stock:     17,
       amount:    8,
-      imgUrl:    require('../assets/images/cars/outlander.png')
+      imgUrl:    require('../images/cars/outlander.png')
     },
     {
       id:        'pajero_sport',
-      name:      'Pajero Sport',
+      name:      'PAJERO SPORT',
       price:     PRICES.pajero_sport,
       advantage: ADVANTAGES.pajero_sport,
       dopInfo:   DOPINFO.pajero_sport,
       stock:     5,
       amount:    17,
-      imgUrl:    require('../assets/images/cars/pajero_sport.png')
+      imgUrl:    require('../images/cars/pajero_sport.png')
     },
     {
       id:        'eclipse_cross',
-      name:      'Eclipse Cross',
+      name:      'ECLIPSE CROSS',
       price:     PRICES.eclipse_cross,
       advantage: ADVANTAGES.eclipse_cross,
       dopInfo:   DOPINFO.eclipse_cross,
       stock:     11,
       amount:    19,
-      imgUrl:    require('../assets/images/cars/eclipse_cross.png')
+      imgUrl:    require('../images/cars/eclipse_cross.png')
     },
     {
       id:        'asx',
-      name:      'Asx',
+      name:      'ASX',
       price:     PRICES.asx,
       advantage: ADVANTAGES.asx,
       dopInfo:   DOPINFO.asx,
       stock:     6,
       amount:    19,
-      imgUrl:    require('../assets/images/cars/asx.png')
+      imgUrl:    require('../images/cars/asx.png')
     },
     {
       id:        'l200',
@@ -123,17 +123,17 @@ export default {
       dopInfo:   DOPINFO.l200,
       stock:     12,
       amount:    19,
-      imgUrl:    require('../assets/images/cars/l200_new.png')
+      imgUrl:    require('../images/cars/l200_new.png')
     },
     {
       id:        'pajero',
-      name:      'Pajero',
+      name:      'PAJERO',
       price:     PRICES.pajero,
       advantage: ADVANTAGES.pajero,
       dopInfo:   DOPINFO.pajero,
       stock:     17,
       amount:    7,
-      imgUrl:    require('../assets/images/cars/pajero.png')
+      imgUrl:    require('../images/cars/pajero.png')
     }
   ]
 };

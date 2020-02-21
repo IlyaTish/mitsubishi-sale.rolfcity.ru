@@ -1,51 +1,30 @@
 {
-  "name": "mitsu",
+  "name": "vue-starter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "git add --a && git commit && vue-cli-service build && git add --a && git commit -m 'build' && git push",
+    "deploy": "ssh 188.120.231.208 'cd sale.kuntsevo-lada.ru && git pull'"
   },
   "dependencies": {
-    "compression-webpack-plugin": "^3.1.0",
-    "core-js": "^3.6.4",
-    "imagemin-webpack-plugin": "^2.4.2",
-    "jimp": "^0.9.3",
-    "node": "^13.8.0",
+    "axios": "^0.18.0",
+    "inputmask": "^3.3.11",
+    "jquery": "^3.3.1",
     "pug": "^2.0.4",
-    "pug-plain-loader": "^1.0.0",
-    "responsive-loader": "^1.2.0",
-    "sas": "^3.0.4",
-    "sass": "^1.25.0",
-    "sass-loader": "^8.0.2",
-    "vue": "^2.6.11"
+    "swiper": "^4.5.0",
+    "vue": "^2.5.17"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-eslint": "~4.2.0",
-    "@vue/cli-service": "~4.2.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "@vue/cli-plugin-babel": "^4.1.1",
+    "@vue/cli-service": "^3.1.4",
+    "compression-webpack-plugin": "^3.1.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "jimp": "^0.9.3",
+    "node-sass": "^4.9.0",
+    "pug-plain-loader": "^1.0.0",
+    "responsive-loader": "^1.2.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
+  }
 }
