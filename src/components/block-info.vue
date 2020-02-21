@@ -4,18 +4,17 @@
       .info__cont
         h2.info__title Воспользуйся <br>программой <br>трейд-ин Mitsubishi
         p.info__p Узнайте больше о предложение трейд-ин <br> программы в нашем дилерском центре <br>по телефону <a v-for='office in offices' :href='"tel:" + office.phone_raw'> {{ office.phone }}</a> <br>или закажите звонок
-        button.info__btn.btn Узнать подробнее
+        button.info__btn.btn(@click='getCall({ type: "credit", form: "trade-in", text: "Узнать подробнее" })') Узнать подробнее
 </template>
 
 <script>
   import Mixin from '../common/mixin';
-  import filters from '../common/finance';
   import CallbackInput from './callback-form/callback-input';
 
   export default {
     name: 'block-info',
     components: { CallbackInput },
-    mixins: [Mixin, filters],
+    mixins: [Mixin],
     data() {
       let offices = this.CONSTANTS.offices;
       return {
@@ -66,4 +65,8 @@
       color: #EB0000
       background: #FFFFFF
       border: 1px solid #FFFFFF
+      &:hover
+        color: #FFFFFF
+        background: transparent
+        border: 3px solid #FFFFFF
 </style>

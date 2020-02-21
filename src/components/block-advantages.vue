@@ -3,7 +3,7 @@
     h2.advantages__title.title Наши преимущества
       .container
         ul.advantages__list
-          li.advantages__item(v-for='(item, index) in advantages')
+          li.advantages__item(v-for='(item, index) in advantages' @click='getCall({ type: "sale", form: "advantages", text: `` + $options.filters.uppercase(item.text, item.text.uppercase) + `` })')
             img.advantages__item-img(:src='item.img')
             span.advantages__item-text {{ item.text }}
 </template>
@@ -24,6 +24,11 @@
     methods: {
       getAgreement() {
         this.$emit('getAgreement');
+      }
+    },
+    filters: {
+      uppercase: (value) => {
+        return value.toUpperCase();
       }
     }
   }
@@ -49,9 +54,14 @@
       text-align: center
       border: 5px solid #F2F2F2
       white-space: pre-line
+      cursor: pointer
+      &:hover
+        img
+          opacity: .6
 
     &__item-img
       margin: 30px 0
+      opacity: 1
 
     &__item-text
       font-size: 12px

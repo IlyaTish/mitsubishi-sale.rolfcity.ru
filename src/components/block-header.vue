@@ -15,7 +15,7 @@
           a() выбрать комплектацию
           a(@click='scrollTo("offer")') кредитные предложения
           a(@click='scrollTo("advantages")') преимущества
-          a() контакты
+          a(@click='scrollTo("contacts")') контакты
 </template>
 
 <script>

@@ -3,34 +3,49 @@
     @submit.prevent='submitThis' 
     :class='[device_platform, { horizontal: horizontal }, form_class]'
   )
-    .input-block
-      input.callback-form__input(
-        name='”tel”'
-        type='tel'
-        placeholder='Ваш телефон'
-        :title='"Введите номер телефона"'
-        v-model='phone'
-        ref='phone'
-        v-mask
-        :pattern='".*[0-9]{1}.*[0-9]{3}.*[0-9]{3}.*[0-9]{4}"'
-        required
-      )
-      button.callback-form__btn.btn.CKFormTrigger(
-        type='submit'
-        :disabled='!acceptance'
-        :class='[{ disabled: !acceptance }]'
-        ref='submitter'
-      ) Отправить
-      a(
-        href='#'
-        target='_blank'
-        v-if='map'
-      )
-        .callback-form__btn.btn Построить маршрут
+    template(v-if='map')
+      .input-block
+        input.callback-form__input.callback-form__input--empty(
+          name='”tel”'
+          type='tel'
+          placeholder='Ваш телефон'
+          :title='"Введите номер телефона"'
+          v-model='phone'
+          ref='phone'
+          v-mask
+          :pattern='".*[0-9]{1}.*[0-9]{3}.*[0-9]{3}.*[0-9]{4}"'
+          required
+        )
+        button.callback-form__btn.btn.btn--white.CKFormTrigger(
+          type='submit'
+          :disabled='!acceptance'
+          :class='[{ disabled: !acceptance }]'
+          ref='submitter'
+        ) Заказать звонок
 
-    .agreement(v-if='CONSTANTS.need_agreement')
-      .agreement-confirm
-        span(@click='getAgreement') Я согласен с условиями обработки персональных данных
+    template(v-else)
+      .input-block
+        input.callback-form__input(
+          name='”tel”'
+          type='tel'
+          placeholder='Ваш телефон'
+          :title='"Введите номер телефона"'
+          v-model='phone'
+          ref='phone'
+          v-mask
+          :pattern='".*[0-9]{1}.*[0-9]{3}.*[0-9]{3}.*[0-9]{4}"'
+          required
+        )
+        button.callback-form__btn.btn.CKFormTrigger(
+          type='submit'
+          :disabled='!acceptance'
+          :class='[{ disabled: !acceptance }]'
+          ref='submitter'
+        ) Отправить
+
+        .agreement(v-if='CONSTANTS.need_agreement')
+          .agreement-confirm
+            span(@click='getAgreement') Я согласен с условиями обработки персональных данных
 </template>
 
 <script>
@@ -104,6 +119,16 @@
         font-size: 14px
         text-align: center
         color: lighten(#000000, 40%)
+      &--empty
+        height: 46px
+        color: #FFFFFF
+        font-size: 20px
+        background: transparent
+        border: 1px solid #FFFFFF
+        &::placeholder
+          color: #FFFFFF
+          font-size: 20px
+          text-align: center
 
     &__btn
       width: 100%
@@ -116,6 +141,10 @@
     flex-direction: column
     align-items: center
     justify-content: flex-start
+
+  .contacts
+    .input-block
+      margin: 0
 
   .agreement
     display: flex
