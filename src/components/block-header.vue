@@ -100,4 +100,35 @@
         background: #BB162A
         z-index: 3
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+
+  .header.tablet, .header.mobile
+    .header__btn
+      min-width: 170px
+
+    .header__menu
+      flex-wrap: wrap
+      justify-content: center
+
+    .phone
+      display: none
+
+    .mobile-button
+      display: block
+      top: 40px
+      right: 22px
+      user-select: none
+      z-index: 3
+
+  .header.mobile
+    .header__row-1
+      padding: 5px 0
+
+      .logo-1, .logo-2
+        margin: 0 0 10px
+
+      .container
+        flex-wrap: wrap
+
+    .header__row-2
+      display: none
 </style>
