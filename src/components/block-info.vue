@@ -70,4 +70,38 @@
         color: #FFFFFF
         background: transparent
         border: 3px solid #FFFFFF
+
+  .info.tablet
+    min-height: auto
+    padding: 30px 0
+    background: url(../images/block-info-bg.jpg) center center no-repeat #000000
+    background-size: 1000px
+
+  .info.mobile
+    min-height: 450px
+    background: url(../images/block-info-bg.jpg) center center no-repeat
+    background-size: 700px
+    background-position: -100px 100px
+
+    .info__cont
+      width: 100%
+
+    .info__title
+      color: #000000
+      font-size: 20px
+      br
+        display: none
+
+    .info__p
+      margin: 196px 0 20px
+      color: #000000
+      br
+        display: none
+      a
+        margin: 0 4px 0 0
+        color: #000000
+
+    .info__btn
+      max-width: 100%
+      border: 1px solid #EB0000
 </style>
