@@ -101,4 +101,27 @@
     &__link
       min-height: 46px
       border-right: 1px solid #FFFFFF
+
+  .main.tablet
+    .main__title-cont
+      padding: 25px 30px
+
+    .main__title
+      font-size: 38px
+
+  .main.mobile
+    margin: 38% 0 0
+
+    .main-offer
+      height: auto
+
+    .main__title-cont
+      padding: 20px
+
+    .main__title
+      color: #000000
+      font-size: 20px
+
+    .main__subtitle
+      display: none
 </style>
