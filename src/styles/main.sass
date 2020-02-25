@@ -8,6 +8,15 @@
   max-width: 1140px
   position: relative
   padding: 0px 15px
+  @media (min-width: 576px)
+    width: 540px
+    max-width: 100%
+  @media (min-width: 768px)
+    width: 720px
+    flex-wrap: wrap
+  @media (min-width: 992px)
+    width: 960px
+    max-width: 100%
   @media (min-width: 1200px)
     width: 1140px
     max-width: 100%
@@ -79,6 +88,8 @@
   font-family: 'MMCOFFICE-Bold'
   text-align: center
   text-transform: uppercase
+  @media (max-width: 320px)
+    font-size: 19px
 
 .zvon
   &:before

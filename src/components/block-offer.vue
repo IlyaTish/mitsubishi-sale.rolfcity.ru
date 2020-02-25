@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .offer
+  section.block-offer.offer(:class='device_platform')
     .container
       h2.offer__title Кредит
       p.offer__p Выгодные кредитные условия банков- <br>партнёров с максимальным комфортом <br>помогут вам стать владельуем Mitsubishi
@@ -39,7 +39,7 @@
       color: #FFFFFF
       font-size: 24px
       font-family: 'MMCOFFICE-Bold'
-      text-transform: upppercase
+      text-transform: uppercase
 
     &__p
       margin: 0 0 10px

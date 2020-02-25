@@ -7,6 +7,7 @@
     block-offer#offer(v-on='block_handles')
     block-info#info(v-on='block_handles')
     block-contacts#contacts(v-on='block_handles')
+    block-legal(v-on='block_handles')
     full-get(
       v-if='show.get'
       :data='data'
@@ -31,6 +32,7 @@
   import BlockOffer from './components/block-offer';
   import BlockInfo from './components/block-info';
   import BlockContacts from './components/block-contacts';
+  import BlockLegal from './components/block-legal';
   import FullGet from './components/full-get';
   import FullThanks from './components/full-thanks';
   import FullAgreement from './components/full-agreement';
@@ -50,6 +52,7 @@
       BlockOffer,
       BlockInfo,
       BlockContacts,
+      BlockLegal,
       FullThanks,
       FullGet,
       FullAgreement

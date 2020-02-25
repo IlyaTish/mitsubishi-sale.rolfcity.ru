@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .contacts(:class='device_platform')
+  section.block-contacts.contacts(:class='device_platform')
     #ya-karto.ya-karto
     .contacts__cont
       .container
@@ -8,7 +8,7 @@
           a.logo-2(@click='getCall({ type: "sale", form: "header" })')
             img(src='@/images/dealer-logo-white.svg')
           .contacts__phone
-            span(v-for='office in offices') {{ office.phone }}
+            span {{ CONSTANTS.phone }}
           callback-input(
             v-on='$listeners'
             :map='true'
@@ -30,6 +30,7 @@
     props: [''],
     data() {
       return {
+        info: this.CONSTANTS,
         offices: this.CONSTANTS.offices
       };
     },
@@ -77,7 +78,7 @@
         });
 
         let center_x = this.CONSTANTS.center_coords.x,
-          center_y = this.CONSTANTS.center_coords.y;
+            center_y = this.CONSTANTS.center_coords.y;
 
         if (this.device_platform === 'tablet') {
           center_x = center_x;
@@ -91,7 +92,7 @@
           'ya-karto',
           {
             center: [center_y, center_x],
-            zoom: 16,
+            zoom: 9,
             controls: []
           },
           {
@@ -105,13 +106,14 @@
             new ymaps.Placemark(
               [office.coords.y, office.coords.x],
               {
-                iconContent: office.short_address
+                balloonContent: office.address,
+                hintContent: office.name
               },
               {
-                // iconLayout: 'default#imageWithContent',
-                // iconImageHref: String(placemarkImg),
-                preset: 'islands#blueStretchyIcon',
-                iconColor: '#1e98ff'
+                iconLayout: 'default#image',
+                iconImageHref: 'map-balloon.png',
+                iconImageSize: [31, 43],
+                iconImageOffset: [-26, -43]
               }
             )
           );

@@ -1,5 +1,5 @@
 <template lang='pug'>
-  section.block-main.main
+  section.block-main.main(:class='device_platform')
     .main__cont
       .main-offer
         .container
@@ -97,7 +97,6 @@
         a
           border-left: 1px solid #FFFFFF
           border-right: 1px solid #FFFFFF
-
 
     &__link
       min-height: 46px

@@ -1,5 +1,5 @@
 <template lang='pug'>
-  section.block-cars.cars
+  section.block-cars.cars(:class='device_platform')
     .container
       h2.cars__title.title Модельный ряд
 
@@ -10,7 +10,7 @@
               h3.car__name Mitsubishi <b>{{ car.name }}</b>
             a(@click='getCall({ type: "sale", form: "car", text: `Оставьте заявку на MITSUBISHI ` + car.name + ` и мы Вам перезвоним` })')
               .car__img-cont
-                img(:src='car.imgUrl')
+                img.car__img(:src='car.imgUrl')
 
           .car__col.car__col--col-2
             a(@click='getCall({ type: "sale", form: "car", text: `MITSUBISHI ` + car.name + ` от ` + $options.filters.delimiter(car.price, car.price.delimiter) + `\u00A0руб.` })')
@@ -19,11 +19,12 @@
               li.car__dop-item(v-for='info_item in car.dopInfo') {{ info_item }}
 
           .car__col.car__col--col-3
-            span.car__in-stock Осталось {{ car.stok }} авто по акции
+            span.car__in-stock Осталось {{ car.stock }} авто по акции
             .car__advantage
-              span.car__advantage-text Выгода до
-              span.car__advantage-price {{ car.advantage | delimiter }}
-              p.car__rub-sym <span class='rub'></span> <sup>*</sup>
+              .car__advantage-col
+                span.car__advantage-text Выгода до
+                span.car__advantage-price {{ car.advantage | delimiter }}
+                span.car__rub-sym <span class='rub'></span> <sup>*</sup>
               a.car__btn.btn(@click='getCall({ type: "sale", form: "car", text: `УЗНАЙТЕ СВОЮ ЦЕНУ! MITSUBISHI ` + car.name + `` })') узнайте свою цену
               p.car__p <b>Пользуется спросом!</b> За последние 2&nbsp;часа заказали звонок {{ car.amount }} раз
 </template>
@@ -86,19 +87,30 @@
     &__col
       &--col-1
         width: 38%
+        min-height: 280px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: relative
       &--col-2
         width: 30%
         border-right: 4px solid #f2f2f2
       &--col-3
         width: 28%
 
+    &__img
+      max-width: 100%
+
     &__name
       margin: 0
       font-size: 32px
       text-transform: uppercase
-      top: -10px
+      bottom: 240px
       left: 0
       position: absolute
+      br
+        display: none
 
     &__price
       width: 100%

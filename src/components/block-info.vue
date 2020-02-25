@@ -1,9 +1,9 @@
 <template lang='pug'>
-  .info
+  section.block-info.info(:class='device_platform')
     .container
       .info__cont
         h2.info__title Воспользуйся <br>программой <br>трейд-ин Mitsubishi
-        p.info__p Узнайте больше о предложение трейд-ин <br> программы в нашем дилерском центре <br>по телефону <a v-for='office in offices' :href='"tel:" + office.phone_raw'> {{ office.phone }}</a> <br>или закажите звонок
+        p.info__p Узнайте больше о предложение трейд-ин <br> программы в нашем дилерском центре <br>по телефону <a :href='"tel:" + CONSTANTS.phone'> {{ CONSTANTS.phone }}</a> <br>или закажите звонок
         button.info__btn.btn(@click='getCall({ type: "credit", form: "trade-in", text: "Узнать подробнее" })') Узнать подробнее
 </template>
 
@@ -58,6 +58,7 @@
       font-family: 'MMCOFFICE-Bold'
       a
         color: #FFFFFF
+        font-size: 20px
 
     &__btn
       width: 100%

@@ -136,7 +136,6 @@
       font-family: 'MMCOFFICE-Medium'
 
   .input-block
-    margin: 0 0 26px
     display: flex
     flex-direction: column
     align-items: center
@@ -147,6 +146,7 @@
       margin: 0
 
   .agreement
+    margin: 20px 0 0
     display: flex
     justify-content: center
     position: relative

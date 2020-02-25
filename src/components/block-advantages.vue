@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .advantages
+  section.block-advantages.advantages(:class='device_platform')
     h2.advantages__title.title Наши преимущества
       .container
         ul.advantages__list
@@ -66,4 +66,12 @@
     &__item-text
       font-size: 12px
       font-family: 'MMCOFFICE-Bold'
+
+  .advantages.mobile
+    .advantages__list
+      flex-wrap: wrap
+
+    .advantages__item
+      width: 49%
+      margin: 0 0 5px
 </style>
