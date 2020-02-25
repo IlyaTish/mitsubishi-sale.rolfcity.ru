@@ -181,4 +181,23 @@
 
     .logo-2
       display: inline-block
+
+  .contacts.tablet, .contacts.mobile
+    display: flex
+    flex-direction: column
+
+    .contacts__cont
+      width: 100%
+      max-width: 700px
+      margin: 0 auto 60px
+
+      .container
+        padding: 20px
+
+    .contacts__content
+      max-width: 100%
+      padding: 0
+
+    .contacts__title
+      padding: 0
 </style>
