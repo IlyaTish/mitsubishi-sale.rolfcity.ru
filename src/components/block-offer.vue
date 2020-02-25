@@ -67,4 +67,44 @@
         color: #FFFFFF
         background: transparent
         border: 3px solid #FFFFFF
+
+  .offer.tablet
+    background-size: 1000px
+    background-position: left center
+
+    .offer__title
+      color: #000000
+
+    .offer__p
+      margin: 30px 0 10px
+
+    .offer__btn
+      margin: 34px 0 0 0
+      border: 1px solid #BB162A
+
+  .offer.mobile
+    padding: 184px 0 0
+    background-size: 700px
+    background-position: -320px top
+
+    .offer__title
+      color: #000000
+
+    .offer__p
+      padding: 16px 0
+      color: #000000
+      br
+        display: none
+
+    .offer__info-sup
+      color: #000000
+      font-size: 20px
+
+    .offer__info-text
+      color: #BB162A
+
+    .offer__btn
+      max-width: 100%
+      margin: 34px 0 0
+      border: 1px solid #BB162A
 </style>
