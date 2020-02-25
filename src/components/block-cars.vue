@@ -186,4 +186,46 @@
       margin: 0
       color: #000000
       font-size: 16px
+
+  .cars.tablet, .cars.mobile
+    .car
+      &__name
+        max-width: 180px
+
+      &__dop-item
+        font-size: 14px
+
+      &__advantage-price
+        font-size: 30px
+
+  .cars.tablet
+    .car
+      background: url(../images/car.ramka.png) 16px center no-repeat
+
+      &__col
+        &--col-1
+          width: 32%
+
+  .cars.mobile
+    .car
+      margin: 0 0 60px
+      flex-direction: column
+      background-position: right top
+
+      &__col
+        width: 100%
+
+      &__advantage-col
+        display: flex
+        align-items: center
+
+      &__advantage-text
+        margin: 0 10px 0 0
+
+      &__advantage-price
+        font-size: 36px
+
+      &__name
+        max-width: none
+        font-size: 22px
 </style>
