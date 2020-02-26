@@ -109,6 +109,17 @@
     .main__title
       font-size: 38px
 
+    .submenu__list
+      flex-wrap: wrap
+      justify-content: space-between
+
+    .submenu__item
+      width: 49%
+
+    .submenu__link
+      width: 100%
+      border: 0px
+
   .main.mobile
     margin: 38% 0 0
 
@@ -124,4 +135,20 @@
 
     .main__subtitle
       display: none
+
+    .submenu
+      background: none
+
+    .submenu__list
+      flex-wrap: wrap
+
+    .submenu__item
+      width: 100%
+
+    .submenu__link
+      width: 100%
+      display: inline-flex
+      align-items: center
+      border: 1px solid #FFFFFF
+      border-bottom: 0px
 </style>

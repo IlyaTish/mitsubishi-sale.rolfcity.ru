@@ -8,13 +8,13 @@
           img(src='@/images/dealer-logo.svg')
         a.phone(:href='"tel:" + CONSTANTS.phone') {{ CONSTANTS.phone }}
         a.header__btn.btn(@click='getCall({ type: "sale", form: "header" })') Заказать звонок
-        a.mobile-button(href='#')
+        div.mobile-button(:class='{ active: isActive }' @click='setActive()')
           span
           span
           span
     .header__row-2
       .container
-        .header__menu
+        .header__menu(:class='{ active: isActive }')
           a(@click='scrollTo("cars")') МОДЕЛЬНЫЙ РЯД
           a() выбрать комплектацию
           a(@click='scrollTo("offer")') кредитные предложения
@@ -33,7 +33,8 @@
     data() {
       let offices = this.CONSTANTS.offices;
       return {
-        offices: offices
+        offices: offices,
+        isActive: false
       };
     },
     methods: {
@@ -44,6 +45,9 @@
       },
       getCall(data) {
         this.$emit('getCall', data);
+      },
+      setActive() {
+        this.isActive = !this.isActive;
       }
     }
   };
@@ -102,6 +106,9 @@
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
 
   .header.tablet, .header.mobile
+    .header__row-1
+      padding: 8px 0
+
     .header__btn
       min-width: 170px
 
@@ -109,19 +116,12 @@
       flex-wrap: wrap
       justify-content: center
 
-    .phone
-      display: none
-
-    .mobile-button
-      display: block
-      top: 40px
-      right: 22px
-      user-select: none
-      z-index: 3
-
   .header.mobile
     .header__row-1
       padding: 5px 0
+
+      .phone
+        display: none
 
       .logo-1, .logo-2
         margin: 0 0 10px
@@ -129,6 +129,53 @@
       .container
         flex-wrap: wrap
 
+      .mobile-button
+        width: auto
+        display: inline-block
+        top: 40px
+        right: 22px
+        user-select: none
+        z-index: 3
+        span
+          transform-origin: 4px 0px
+
+      .mobile-button.active
+        span
+          opacity: 1
+          transform: rotate(45deg) translate(-7px, -21px)
+          &:nth-last-child(3)
+            opacity: 0
+            transform: rotate(0deg) scale(0.2, 0.2)
+          &:nth-last-child(2)
+            transform: rotate(-45deg) translate(0, 10px)
+
     .header__row-2
+      background: transparent
+      .container
+        width: 540px
+        max-width: 100%
+
+    .header__menu
+      width: 100%
+      padding: 20px 0
       display: none
+      flex-direction: column
+      background: #F2F2F2
+      position: absolute
+      z-index: 2
+      transition: all 0.5s
+      a
+        width: 100%
+        display: inline-block
+        padding: 12px 20px 12px 15px
+        color: #000000
+        font-size: 18px
+        line-height: 30px
+        text-align: right
+
+    .header__menu.active
+      display: block
+      top: 0
+      right: 0
+      position: absolute
 </style>
