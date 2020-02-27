@@ -99,8 +99,6 @@
 </script>
 
 <style lang='sass'>
-  @import '../../styles/constants.scss'
-
   .callback-form
     width: 100%
 

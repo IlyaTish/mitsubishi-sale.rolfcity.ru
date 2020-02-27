@@ -1,3 +1,5 @@
+import MODELS from './models';
+
 const PRICES = {
   outlander:     1195000,
   pajero_sport:  1827000,
@@ -76,14 +78,15 @@ const DOPINFO = {
 export default {
   CARS: [
     {
-      id:        'outlander',
-      name:      'OUTLANDER',
-      price:     PRICES.outlander,
-      advantage: ADVANTAGES.outlander,
-      dopInfo:   DOPINFO.outlander,
-      stock:     17,
-      amount:    8,
-      imgUrl:    require('../images/cars/outlander.png')
+      id:           'outlander',
+      name:         'OUTLANDER',
+      price:        PRICES.outlander,
+      advantage:    ADVANTAGES.outlander,
+      dopInfo:      DOPINFO.outlander,
+      stock:        17,
+      amount:       8,
+      imgUrl:       require('../images/cars/outlander.png'),
+      models:       MODELS.outlander
     },
     {
       id:        'pajero_sport',
@@ -93,7 +96,8 @@ export default {
       dopInfo:   DOPINFO.pajero_sport,
       stock:     5,
       amount:    17,
-      imgUrl:    require('../images/cars/pajero_sport.png')
+      imgUrl:    require('../images/cars/pajero_sport.png'),
+      models:    MODELS.pajero_sport
     },
     {
       id:        'eclipse_cross',
@@ -103,7 +107,8 @@ export default {
       dopInfo:   DOPINFO.eclipse_cross,
       stock:     11,
       amount:    19,
-      imgUrl:    require('../images/cars/eclipse_cross.png')
+      imgUrl:    require('../images/cars/eclipse_cross.png'),
+      models:    MODELS.eclipse_cross
     },
     {
       id:        'asx',
@@ -113,7 +118,8 @@ export default {
       dopInfo:   DOPINFO.asx,
       stock:     6,
       amount:    19,
-      imgUrl:    require('../images/cars/asx.png')
+      imgUrl:    require('../images/cars/asx.png'),
+      models:    MODELS.asx
     },
     {
       id:        'l200',
@@ -123,7 +129,8 @@ export default {
       dopInfo:   DOPINFO.l200,
       stock:     12,
       amount:    19,
-      imgUrl:    require('../images/cars/l200_new.png')
+      imgUrl:    require('../images/cars/l200_new.png'),
+      models:    MODELS.l200_new
     },
     {
       id:        'pajero',
@@ -133,7 +140,8 @@ export default {
       dopInfo:   DOPINFO.pajero,
       stock:     17,
       amount:    7,
-      imgUrl:    require('../images/cars/pajero.png')
+      imgUrl:    require('../images/cars/pajero.png'),
+      models:    MODELS.pajero
     }
   ]
 };

@@ -2,7 +2,8 @@
   #app
     block-header(v-on='block_handles')
     block-main(v-on='block_handles')
-    block-cars#cars(v-on='block_handles')
+    block-cars#cars(v-on='block_handles' @chooseComp='setCar')
+    block-stock#stock(:car='car' v-on='block_handles')
     block-advantages#advantages(v-on='block_handles')
     block-offer#offer(v-on='block_handles')
     block-info#info(v-on='block_handles')
@@ -28,6 +29,7 @@
   import BlockHeader from './components/block-header';
   import BlockMain from './components/block-main';
   import BlockCars from './components/block-cars';
+  import BlockStock from './components/block-stock';
   import BlockAdvantages from './components/block-advantages';
   import BlockOffer from './components/block-offer';
   import BlockInfo from './components/block-info';
@@ -48,6 +50,7 @@
       BlockHeader,
       BlockMain,
       BlockCars,
+      BlockStock,
       BlockAdvantages,
       BlockOffer,
       BlockInfo,
@@ -67,7 +70,8 @@
           thanks: false
         },
         cur_office: 1,
-        data: {}
+        data: {},
+        car: null
       };
     },
     mounted() {
@@ -108,6 +112,7 @@
       },
       setCar(car) {
         this.cur_car = car;
+        this.scrollTo('stock');
       },
       getAgreement() {
         this.show.agreement = true;

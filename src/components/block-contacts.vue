@@ -136,8 +136,6 @@
 </script>
 
 <style scoped lang='sass'>
-  @import '../styles/constants';
-
   .contacts
     &__cont
       margin: -448px 0 60px

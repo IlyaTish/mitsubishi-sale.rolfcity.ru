@@ -38,8 +38,6 @@
 </script>
 
 <style scoped lang="sass">
-  @import '../styles/constants.scss';
-
   .popup
     width: 100%
     height: 100%

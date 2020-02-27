@@ -23,7 +23,6 @@
   import Mixin from '../common/mixin';
   import finance from '../common/finance';
   import CallbackInput from './callback-form/callback-input';
-  import Swiper from 'swiper';
   import $ from 'jquery';
   import Inputmask from 'inputmask';
 

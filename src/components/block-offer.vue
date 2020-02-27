@@ -11,13 +11,12 @@
 
 <script>
   import Mixin from '../common/mixin';
-  import filters from '../common/finance';
   import CallbackInput from './callback-form/callback-input';
 
   export default {
     name: 'block-offer',
     components: { CallbackInput },
-    mixins: [Mixin, filters],
+    mixins: [Mixin],
     methods: {
       getAgreement() {
         this.$emit('getAgreement');
