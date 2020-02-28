@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .block-stock-container(:class='[device_platform]')
+  section.block-stock-container(:class='[device_platform]')
     .container
       .stock-selector
         .drop-down(v-for='(selector, idx) in selectors')

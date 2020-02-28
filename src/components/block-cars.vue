@@ -16,7 +16,7 @@
             a(@click='getCall({ type: "sale", form: "car", text: `MITSUBISHI ` + car.name + ` от ` + $options.filters.delimiter(car.price, car.price.delimiter) + `\u00A0руб.` })')
               span.car__price от <span class='large'>{{ car.price | delimiter }}</span><span class='rub'></span>
             ul.car__dop-items
-              li.car__dop-item(v-for='info_item in car.dopInfo') {{ info_item }}
+              li.car__dop-item(v-for='info_item in car.dopInfo' @click='getCall({ type: "sale", form: "car", text: ``+ info_item +`` })') {{ info_item }}
 
           .car__col.car__col--col-3
             span.car__in-stock Осталось {{ car.stock }} авто по акции
@@ -132,6 +132,7 @@
       position: relative
       font-size: 16px
       font-family: 'MMCOFFICE-Bold'
+      cursor: pointer
       &:before
         content: ''
         width: 20px
