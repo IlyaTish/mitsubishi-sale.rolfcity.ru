@@ -129,7 +129,8 @@ export default {
     margin: 5px 0
     padding: 0
 
-  .btn
-    width: 100%
-    min-width: auto
+  .stock-table
+    .btn
+      width: 100%
+      min-width: auto
 </style>

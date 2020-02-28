@@ -8,7 +8,7 @@
             @click='expand(selector.alias)') {{ (expanded === selector.alias || cur[selector.alias] === 'Все') ? selector.placeholder : cur[selector.alias] }}
             .arrow
           .drop-down__list(
-            v-outer-click='{func: closeAll, friend: '.dd-' + idx}'
+            v-outer-click='{func: closeAll, friend: ".dd-" + idx}'
             v-if='expanded === selector.alias')
             .drop-down__list-item(
               :class='{active: cur[selector.alias] === item}'
@@ -154,10 +154,10 @@ export default {
 
 .stock-selector
   width: 100%
+  margin: 30px 0
   display: flex
   justify-content: space-between
   align-items: center
-  margin-top: 30px
 
 .drop-down
   width: 48%
@@ -183,14 +183,15 @@ export default {
       background: #FFFFFF
 
 .drop-down__list
-  position: absolute
+  width: 100%
+  padding: 10px 0
   bottom: 0
   left: 0
+  position: absolute
   transform: translateY(100%)
-  padding: 10px 15px
-  background: #fff
+  background: #FFFFFF
+  box-shadow: 2px 4px 6px #0000002E
   z-index: 1
-  width: 100%
 
 .drop-down__list-item
   height: 25px
@@ -198,7 +199,7 @@ export default {
   display: flex
   align-items: center
   justify-content: flex-start
-  padding: 5px
+  padding: 5px 20px
   &:hover
     background: #f5f5f5
   &.active
