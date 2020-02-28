@@ -15,8 +15,8 @@
     .header__row-2
       .container
         .header__menu(:class='{ active: isActive }')
-          a(@click='scrollTo("cars")') МОДЕЛЬНЫЙ РЯД
-          a() выбрать комплектацию
+          a(@click='scrollTo("cars")') модельный ряд
+          a(@click='scrollTo("stock")') выбрать комплектацию
           a(@click='scrollTo("offer")') кредитные предложения
           a(@click='scrollTo("advantages")') преимущества
           a(@click='scrollTo("contacts")') контакты
