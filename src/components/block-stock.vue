@@ -140,37 +140,27 @@ export default {
 .mobile
   .stock-selector
     flex-direction: column
-    height: 255px
 
   .drop-down
     width: 100%
-
-    &:nth-child(2)
-      margin: 10px 0
+    margin: 0 0 6px
 
 .tablet
-  &.block-stock-container
-    width: 800px
-
   .drop-down
-    width: 230px
-
-    &:nth-child(2)
-      margin: 0 30px
+    width: 48%
 
 .block-stock-container
   margin: 60px auto
 
 .stock-selector
-  height: 120px
   width: 100%
   display: flex
-  justify-content: center
+  justify-content: space-between
   align-items: center
   margin-top: 30px
 
 .drop-down
-  width: 100%
+  width: 48%
   height: 42px
   font-size: 16px
   border: 1px solid #000000
@@ -179,18 +169,18 @@ export default {
   position: relative
   &__box
     height: 100%
-    padding: 0 40px 0 26px
+    padding: 0 26px
     position: relative
     display: flex
     justify-content: flex-start
     align-items: center
     font-family: 'MMCOFFICE-Bold'
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAECAQAAAD2Bt1FAAAAK0lEQVR42mNgmMnwHwm+YwhlAIJyuMBdBmMGKAgFC5xhUGJAAi5AAUEIEwB0NRG8kqWfJwAAAABJRU5ErkJggg==')
+    background-repeat: no-repeat
+    background-position: calc(100% - 20px) center
     cursor: pointer
     &.active
       background: #FFFFFF
-
-.drop-down:nth-child(2)
-  margin: 0 60px
 
 .drop-down__list
   position: absolute

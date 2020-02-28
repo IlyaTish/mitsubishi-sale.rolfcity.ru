@@ -6,7 +6,9 @@
           span.stock-table__text MITSUBISHI <span :class='[col.alias]'><b>{{ item[col.alias] || '' }}</b></span>
         template(v-else)
           span.stock-table__text(:class='[col.alias]') {{ item[col.alias] || '' }}
-      button.btn(@click='getCall({ type: "sale", form: "stock" })') Узнать цену
+
+      .stock-table__column
+        button.btn(@click='getCall({ type: "sale", form: "stock" })') Узнать цену
 
     .more-button(@click='addCount' v-if='data.length > 6 && count < data.length') Показать еще
       .more-sign
@@ -72,7 +74,7 @@ export default {
       background-color: #F2F2F2
 
   &__column
-    width: 25%
+    width: 100%
     padding: 27px 18px
 
   &__text
@@ -105,19 +107,29 @@ export default {
     transform: rotate(0deg)
 
 .tablet
-  .credit
-    font-size: 14px
+  .stock-table__row
+    justify-content: space-between
 
-  .sale
-    font-size: 14px
-    padding: 0 5px
+  .stock-table__column
+    width: auto
+
+  .stock-table__text
+    font-size: 18px
+
+  .btn
+    min-width: 190px
 
 .mobile
   .stock-table__row
-    height: 400px
+    height: auto
     flex-direction: column
-    padding: 20px 0
+    padding: 10px
 
   .stock-table__column
     margin: 5px 0
+    padding: 0
+
+  .btn
+    width: 100%
+    min-width: auto
 </style>
