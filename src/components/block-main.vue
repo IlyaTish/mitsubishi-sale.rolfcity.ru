@@ -4,8 +4,8 @@
       .main-offer
         .container
           .main__title-cont
-            h1.main__title Закрытая ночь продаж <span class='red'>mitsubishi</span> в рольф
-            h2.main__subtitle.title Специальные цены.Предложение ограничено.
+            h1.main__title <span class='red'>Масштабная реализация склада</span> MITSUBISHI в РОЛЬФ!
+            h2.main__subtitle.title только 3 дня. Выгода до 1 050 000 ₽. Эксклюзивное предложение.
       .submenu
         .container
           ul.submenu__list
