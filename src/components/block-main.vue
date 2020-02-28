@@ -10,13 +10,13 @@
         .container
           ul.submenu__list
             li.submenu__item
-              a.submenu__link.btn.zvon Заказать звонок
+              a.submenu__link.btn.zvon(@click='getCall({ type: "sale", form: "main" })') Заказать звонок
             li.submenu__item
-              a.submenu__link.btn.gray-bg.obmen Обмен моего авто на MITSUBISHI
+              a.submenu__link.btn.gray-bg.obmen(@click='getCall({ type: "sale", form: "main", text: `Обмен моего авто на MITSUBISHI` })') Обмен моего авто на MITSUBISHI
             li.submenu__item
-              a.submenu__link.btn.gray-bg.vig_kred Выгодный кредит на MITSUBISHI
+              a.submenu__link.btn.gray-bg.vig_kred(@click='getCall({ type: "sale", form: "main", text: `Выгодный кредит на MITSUBISHI` })') Выгодный кредит на MITSUBISHI
             li.submenu__item
-              a.submenu__link.btn.gray-bg.td Записаться на тест-драйв
+              a.submenu__link.btn.gray-bg.td(@click='getCall({ type: "sale", form: "main", text: `Записаться на тест-драйв` })') Записаться на тест-драйв
 </template>
 
 <script>
