@@ -8,7 +8,7 @@
           span.stock-table__text(:class='[col.alias]') {{ item[col.alias] || '' }}
 
       .stock-table__column
-        button.btn(@click='getCall({ type: "sale", form: "stock" })') Узнать цену
+        button.btn(@click='getCall({ type: "sale", form: "stock", text: `Узнать цену на MITSUBISHI ` + item.model + `` })') Узнать цену
 
     .more-button(@click='addCount' v-if='data.length > 6 && count < data.length') Показать еще
       .more-sign

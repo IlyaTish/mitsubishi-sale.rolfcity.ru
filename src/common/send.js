@@ -207,30 +207,3 @@ function CTWRequest(phone) {
     });
   }
 }
-
-/* Кирилл, привет, пришёл комментарий от КК:
-
-По CKAction можно запускать звонки без подключенного кода CallKeeper.
-Звонок не идет из-за того, что пользователь хочет видеть UTM-метки, они присоединяются к запросу с помощью CallKeeper.f.justCookies() .
-Объект CallKeeper доступен только при подключенном скрипте. Из-за этого не идет запрос, нужно либо подключать код всегда, либо поставить проверку, существует-ли объект CallKeeper, если нет - отправлять запрос без UTM-меток. Или с статичными UTM-метками, для этого нужно вместо функции CallKeeper.f.justCookies(), передать строку:
-
-current:::typ=utm|||src=source|||mdm=medium|||cmp=campaign|||cnt=content|||trm=term^#^#
-
-Важно: соответственно source, medium, campaign, content, term - заменить на такие статичные значения, которые требуются видеть в отчете UTM-меток (в примере ниже я Вам поставил правильные UTM метки, согласованные с ГК Автомир). Статичная UTM-метка привязывается к сайту. Для разных сайтов, статичная UTM-метка может быть разная или одинаковая, в зависимости от потребностей аналитики.
-Тогда UTM-метки отобразятся в ЛК КоллКипер.
-
-+ в строке ниже Вам нужно заменить
--тестовый hash виджета: 4c0d908110c42e999999999c614bcfeb на тот, который у Вас на сайте, на котором мы делаем доработку;
--обратный адрес для уведомлений http://site-brend.ru/ на тот, который нужен Вам.
-
-Примерный вид кода с такими изменениями, с статичными UTM-метками TEST во всех значениях (хеш виджета, адрес отправки на Ваш сервер – тестовые, нужно заменить на реальные):
-var cookiesBasket = CallKeeper ? '&cookiesBasket='+CallKeeper.f.justCookies() : '&cookiesBasket=' + encodeURIComponent('current:::typ=utm|||src=actioncall|||mdm=cpc|||cmp=lpnoscript|||cnt=(none)|||trm=(none)^#^#');
-var l_callkeeper_url = '//api.callkeeper.ru/formReceiver?isSend&widgetHash=4c0d908110c42e999999999c614bcfeb&phone=' + l_phone + '&backUrl=http://site-brend.ru/' + cookiesBasket;
-
-
-src=site // метка будет = acctioncall
-mdm=medium // метка будет = cpc (для ЛП с контекстом)
-cmp=campaign // метка будет = lpnoscript (можете заменить на другую, удобную Вам)
-cnt=content // метка будет = (none)
-trm=term // метка будет = (none)
-*/
