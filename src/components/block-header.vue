@@ -116,15 +116,27 @@
       flex-wrap: wrap
       justify-content: center
 
+  .header.tablet
+    .header__row-1
+      .phone
+        order: 1
+
+      .logo-1
+        order: 2
+
+      .logo-2
+        order: 3
+
+      .btn
+        min-width: 213px
+        order: 4
+
   .header.mobile
     .header__row-1
-      padding: 5px 0
+      padding: 8px 0
 
       .phone
         display: none
-
-      .logo-1, .logo-2
-        margin: 0 0 10px
 
       .container
         flex-wrap: wrap

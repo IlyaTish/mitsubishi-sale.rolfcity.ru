@@ -74,9 +74,11 @@
       font-size: 40px
       font-family: 'MMCOFFICE-Bold'
       text-transform: uppercase
+      text-shadow: 0px 4px 4px #000000
 
     &__subtitle
       color: #FFFFFF
+      text-shadow: 0px 4px 4px #000000
 
   .main-offer
     height: 628px
@@ -108,12 +110,18 @@
     .main__title
       font-size: 38px
 
+    .submenu
+      .container
+        width: 100%
+        margin: 0
+        padding: 0
+
     .submenu__list
       flex-wrap: wrap
-      justify-content: space-between
+      justify-content: center
 
     .submenu__item
-      width: 49%
+      width: 50%
 
     .submenu__link
       width: 100%
@@ -131,6 +139,7 @@
     .main__title
       color: #000000
       font-size: 20px
+      text-shadow: none
 
     .main__subtitle
       display: none
