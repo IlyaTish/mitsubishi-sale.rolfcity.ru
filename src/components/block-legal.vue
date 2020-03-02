@@ -2,15 +2,7 @@
   section.block-legal.legal(:class='[device_platform]')
     .container
       .expander
-        span.expander-button(@click='expanded = !expanded') Полные условия акции
-        transition(name='slide')
-          .legal__text-cont(v-show='expanded')
-            p.legal__p 
-              | До 1 050 000 руб. на Mitsubishi Pajero Sport, до 650 000 руб. на Mitsubishi Outlander,до 550 000 руб. на Mitsubishi Pajero, до 450 000 руб. на Mitsubishi L200, до 310 000 руб. на Mitsubishi ASX и до 700 000 руб. на Mitsubishi Eclipse Cross действует на автомобили в наличии, которая складывается из прямой скидки на автомобиль, скидки по программе трейд-ин / утилизация и выгоды на дополнительное оборудование.
-              <br><br>
-              | Кредитор - ПАО "Совкомбанк". Аванс – 0% от стоимости автомобиля. Валюта – рубли. Ставка от 14,99% годовых. При условии «Защита платежей». КАСКО приобретается за наличный расчет. Срок кредитования 60 мес. Предложение не является офертой и действует до 31.01.2020 года на новые автомобили Mitsubishi 2018/2019 года выпуска. Количество автомобилей ограничено. Подробности в ООО «РОЛЬФ» филиал «Сити».
-              <br><br>
-              | РОЛЬФ Сити - г.Москва, Ярославское шоссе, 31, работаем с 8:00 до 22:00 <a :href='"tel:" + CONSTANTS.phone'>{{ CONSTANTS.phone }}</a>
+        a.expander-button(href='https://www.rolfcity.ru/agreement' target='_blank') Полные условия акции
 </template>
 
 <script>
@@ -29,7 +21,7 @@
 
 <style lang='sass'>
   .legal
-    padding: 60px 0 0
+    padding: 60px 0 40px
 
     &__text-cont
       margin: 10px 0 0
@@ -57,4 +49,7 @@
   .slide-enter, .slide-leave-to
     transform: translateY(10px)
     opacity: 0
+
+  .legal.mobile
+    padding: 0 0 40px
 </style>
