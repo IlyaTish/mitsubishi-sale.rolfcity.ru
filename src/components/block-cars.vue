@@ -101,6 +101,8 @@
 
     &__img
       max-width: 100%
+      @media (max-width: 539px)
+        transform: scale(1.5)
 
     &__name
       margin: 0
@@ -206,6 +208,8 @@
       &__col
         &--col-1
           width: 32%
+        &--col-2
+          border: none
 
   .cars.mobile
     .car
@@ -215,6 +219,8 @@
 
       &__col
         width: 100%
+        &--col-2
+          border: none
 
       &__advantage-col
         display: flex
