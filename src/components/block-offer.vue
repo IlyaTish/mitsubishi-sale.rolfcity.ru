@@ -68,7 +68,7 @@
         border: 3px solid #FFFFFF
 
   .offer.tablet
-    background-size: 1000px
+    background-size: 1200px
     background-position: left center
 
     .offer__title
@@ -76,6 +76,9 @@
 
     .offer__p
       margin: 30px 0 10px
+
+    .offer__info
+      margin: 0 0 44px
 
     .offer__btn
       margin: 34px 0 0 0
@@ -94,6 +97,9 @@
       color: #000000
       br
         display: none
+
+    .offer__info
+      margin: 0
 
     .offer__info-sup
       color: #000000
