@@ -74,8 +74,9 @@
   .info.tablet
     min-height: auto
     padding: 30px 0
-    background: url(../images/block-info-bg.jpg) center center no-repeat #000000
-    background-size: 1000px
+    background: url(../images/block-info-bg.jpg) no-repeat #000000
+    background-position: calc(50% - 100px) center
+    background-size: 1396px
 
   .info.mobile
     min-height: 450px
