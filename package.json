@@ -21,7 +21,7 @@
     "compression-webpack-plugin": "^3.1.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "jimp": "^0.9.3",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "pug-plain-loader": "^1.0.0",
     "responsive-loader": "^1.2.0",
     "sass-loader": "^7.0.1",
