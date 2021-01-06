@@ -8,7 +8,7 @@
     "deploy": "ssh 188.120.231.208 'cd sale.kuntsevo-lada.ru && git pull'"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "inputmask": "^3.3.11",
     "jquery": "^3.3.1",
     "pug": "^2.0.4",
