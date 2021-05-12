@@ -12,7 +12,7 @@
     "inputmask": "^3.3.11",
     "jquery": "^3.3.1",
     "pug": "^2.0.4",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "vue": "^2.5.17"
   },
   "devDependencies": {
